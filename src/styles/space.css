@@ -1,0 +1,11 @@
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-image: url('/space-stars.gif'); /* Make sure this exists in /public */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}

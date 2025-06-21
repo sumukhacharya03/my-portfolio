@@ -1,0 +1,104 @@
+---
+import type { HeroProps } from "@types";
+type Props = HeroProps;
+
+const { specialty, summary, email } = Astro.props;
+---
+
+<section class="relative py-24 md:py-32 px-6 sm:px-12 lg:px-24 z-10">
+  <!-- Name Typing Effect -->
+  <h1 class="mb-2 font-serif text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white">
+    <span id="typed-name"></span><span class="blinking-cursor">|</span>
+  </h1>
+
+  <!-- Specialty -->
+  <p class="mb-8 font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+    {specialty}
+  </p>
+
+  <!-- Summary -->
+  <p class="mb-12 max-w-2xl text-lg text-neutral-300 leading-relaxed">
+    {summary}
+  </p>
+
+  <!-- Social Logos -->
+  <div class="flex gap-6 mb-8">
+    <a
+    href="https://mail.google.com/mail/?view=cm&to=sumukh.acharya@gmail.com" target="_blank">
+    <img src="/icons/gmail.jpg" alt="Gmail" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
+    </a>
+
+    <a
+      href="https://github.com/sumukhacharya03"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-transform duration-200 hover:scale-110"
+    >
+      <img src="/icons/github.webp" alt="GitHub" class="w-8 h-8 sm:w-9 sm:h-9" />
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/sumukh-acharya-6859ab312/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-transform duration-200 hover:scale-110"
+    >
+      <img src="/icons/linkedin.png" alt="LinkedIn" class="w-8 h-8 sm:w-9 sm:h-9" />
+    </a>
+
+    <a
+      href="https://vsco.co/sumukhacharya/gallery"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-transform duration-200 hover:scale-110"
+    >
+      <img src="/icons/vsco.jpeg" alt="VSCO" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
+    </a>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex flex-wrap gap-4">
+
+    <a
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block rounded-full bg-white text-black px-8 py-5 text-sm leading-5 font-semibold shadow-md hover:shadow-lg hover:brightness-90 transition-all"
+    >
+      View Resume
+    </a>
+  </div>
+</section>
+
+<!-- Typing Animation Script -->
+<script>
+  const text = "Sumukh\u00A0Acharya"
+  const typedName = document.getElementById("typed-name");
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      if (typedName) {
+        typedName.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 120); // typing speed
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", type);
+</script>
+
+<style>
+  .blinking-cursor {
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to { opacity: 0 }
+    50% { opacity: 1 }
+  }
+</style>

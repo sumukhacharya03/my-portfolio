@@ -1,0 +1,148 @@
+---
+import Menu from "@icons/Menu.astro";
+import { Image } from "astro:assets";
+import type { HeaderProps } from "@types";
+
+type Props = HeaderProps;
+
+const { siteLogo, navLinks } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 z-50 w-full bg-black/20 backdrop-blur-md text-white flex items-center justify-between px-6 py-4">
+
+  <a href="/" aria-label="Home link">
+    <span class="text-white text-xl font-semibold">Home</span>
+  </a>
+
+  <button
+    type="button"
+    id="menu-button"
+    class="px-1.5 text-neutral sm:hidden"
+    aria-expanded="false"
+    aria-controls="main-menu"
+  >
+    <Menu />
+  </button>
+
+  <nav
+    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
+    id="main-menu"
+  >
+    <ul class="gap-2 sm:flex">
+      {
+        navLinks.map((link) => (
+          <li class="relative">
+            <a
+              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
+              href={link.href}
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const button = document.querySelector("#menu-button");
+  const menu = document.querySelector("#main-menu");
+  const navItems = document.querySelectorAll("#main-menu > ul > li > a");
+  const sections = document.querySelectorAll("section[id]");
+  let currentActiveId: string | null = null;
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    const isHidden = menu?.classList.contains("hidden");
+    button?.setAttribute("aria-expanded", `${!isHidden}`);
+  };
+
+  button?.addEventListener("click", toggleMenu);
+  navItems.forEach((item) => item?.addEventListener("click", toggleMenu));
+
+  const setActive = (id: string | null) => {
+    if (!id || currentActiveId === id) return;
+    currentActiveId = id;
+
+    navItems.forEach((link) => {
+      const match = link.getAttribute("href") === `#${id}`;
+      link.classList.toggle("text-white", match);
+      link.classList.toggle("after:opacity-100", match);
+    });
+  };
+
+  // Detect the section closest to top of screen
+  const detectVisibleSection = () => {
+    let closest: Element | null = null;
+    let minDistance = window.innerHeight;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top < minDistance) {
+        closest = section;
+        minDistance = rect.top;
+      }
+    });
+
+    if (closest) {
+      setActive((closest as HTMLElement).id);
+    }
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter((e) => e.isIntersecting);
+    if (!visible.length) return;
+
+    const topSection = visible.reduce((prev, curr) =>
+      prev.boundingClientRect.top < curr.boundingClientRect.top ? prev : curr
+    );
+
+    setActive(topSection.target.id);
+  }, {
+    rootMargin: "0px 0px -60% 0px",
+    threshold: 0.2,
+  });
+
+  sections.forEach((section) => observer.observe(section));
+
+  // Force correct dot on nav click
+  navItems.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = link.getAttribute("href")?.replace("#", "");
+      if (id) {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => {
+            setActive(id);
+          }, 400);
+        }
+      }
+    });
+  });
+
+  // ✅ NEW: Force active dot based on scroll position after load
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      detectVisibleSection();
+    }, 100); // allow browser to settle scroll position
+  });
+
+  // Re-observe on tab switch
+  document.onvisibilitychange = () => {
+    if (document.visibilityState === "hidden") {
+      observer.disconnect();
+    } else {
+      sections.forEach((section) => observer.observe(section));
+    }
+  };
+</script>
+
+<style>
+  header {
+    animation-timeline: scroll();
+    animation-range: 0 650px;
+  }
+</style>
