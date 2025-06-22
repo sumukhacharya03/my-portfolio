@@ -70,27 +70,19 @@ export const SITE_CONTENT: SiteContent = {
       image: "/ridewave.webp",
     },
     {
+      name: "URL Shortener",
+      summary: "Load Balanced URL Shortener using Docker, Kubernetes and Redis",
+      linkPreview: "/",
+      linkSource: "https://github.com/sumukhacharya03/URL-Shortener",
+      image: "/url.png",
+    },
+    {
       name: "Sports Rental",
       summary: "Sports Equipment Rental Management System using MySQL and Streamlit",
       linkPreview: "/",
       linkSource: "https://github.com/sumukhacharya03/Sports-Rental",
       image: "/sports.webp",
     },
-    {
-      name: "Streamly Content Strategy Optimization",
-      summary: "Data Analysis of Streamly Dataset to help the platform refine its content strategy",
-      linkPreview: "/",
-      linkSource: "https://github.com/sumukhacharya03/Streamly-Content-Strategy-Optimization",
-      image: "/streamly.png",
-    },
-    {
-      name: "Restaurant Ordering System",
-      summary: "Restuarant Ordering System using Socket Programming and SSL",
-      linkPreview: "/",
-      linkSource: "https://github.com/sumukhacharya03/Restaurant-Ordering-System",
-      image: "/restaurant.png",
-    },
-    
 
   ],
   about: {
