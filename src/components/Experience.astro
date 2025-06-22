@@ -11,7 +11,7 @@ const { experience } = Astro.props;
 
 <Section text="Work Experience" href="experience">
   {
-    experience.map(({ company, position, startDate, endDate, summary }) => (
+    experience.map(({ company, position, startDate, endDate, repoLink, summary }) => (
       <div class="mb-10">
         <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
           {company}
@@ -24,6 +24,17 @@ const { experience } = Astro.props;
             {startDate} — {endDate}
           </span>
         </div>
+        {repoLink && (
+          <a
+            href={repoLink}
+            class="mt-4 inline-flex items-center gap-2 text-sm text-white hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/icons/github.webp" alt="GitHub" class="h-5 w-5" />
+            GitHub Repo Link ↗
+          </a>
+        )}
         {Array.isArray(summary) ? (
           <ul class="list-none">
             {summary.map((log) => (
