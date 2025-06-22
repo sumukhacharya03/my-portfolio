@@ -23,16 +23,19 @@ const { specialty, summary, email } = Astro.props;
 
   <!-- Social Logos -->
   <div class="flex gap-6 mb-8">
-    <a
-    href="https://mail.google.com/mail/?view=cm&to=sumukh.acharya@gmail.com" target="_blank">
+  <a 
+    href="mailto:sumukh.acharya@gmail.com"
+    class="transition-transform duration-200 hover:scale-120"
+  >
     <img src="/icons/gmail.jpg" alt="Gmail" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
-    </a>
+  </a>
+
 
     <a
       href="https://github.com/sumukhacharya03"
       target="_blank"
       rel="noopener noreferrer"
-      class="transition-transform duration-200 hover:scale-110"
+      class="transition-transform duration-200 hover:scale-120"
     >
       <img src="/icons/github.webp" alt="GitHub" class="w-8 h-8 sm:w-9 sm:h-9" />
     </a>
@@ -41,7 +44,7 @@ const { specialty, summary, email } = Astro.props;
       href="https://www.linkedin.com/in/sumukh-acharya-6859ab312/"
       target="_blank"
       rel="noopener noreferrer"
-      class="transition-transform duration-200 hover:scale-110"
+      class="transition-transform duration-200 hover:scale-120"
     >
       <img src="/icons/linkedin.png" alt="LinkedIn" class="w-8 h-8 sm:w-9 sm:h-9" />
     </a>
@@ -50,7 +53,7 @@ const { specialty, summary, email } = Astro.props;
       href="https://vsco.co/sumukhacharya/gallery"
       target="_blank"
       rel="noopener noreferrer"
-      class="transition-transform duration-200 hover:scale-110"
+      class="transition-transform duration-200 hover:scale-120"
     >
       <img src="/icons/vsco.jpeg" alt="VSCO" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
     </a>
@@ -63,7 +66,7 @@ const { specialty, summary, email } = Astro.props;
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-block rounded-full bg-white text-black px-8 py-5 text-sm leading-5 font-semibold shadow-md hover:shadow-lg hover:brightness-90 transition-all"
+      class="inline-block rounded-full bg-white text-black px-8 py-5 text-sm leading-5 font-semibold shadow-md hover:shadow-lg hover:brightness-90 transition-all hover:scale-110"
     >
       View Resume
     </a>
