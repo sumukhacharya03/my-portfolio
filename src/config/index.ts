@@ -16,7 +16,7 @@ export const SITE_CONFIG: SiteConfig = {
   socialLinks: [
     
     { text: "LinkedIn", href: "https://www.linkedin.com/in/sumukh-acharya-6859ab312/" },
-    { text: "Github", href: "https://github.com/sumukhacharya03" },
+    { text: "GitHub", href: "https://github.com/sumukhacharya03" },
     { text: "VSCO", href: "https://vsco.co/sumukhacharya/gallery" },
   ],
   socialImage: "/me1.jpg",
@@ -27,7 +27,7 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Sumukh Acharya",
-    specialty: "Final Year CSE Student",
+    specialty: "Final Year CSE Student  Bengaluru, Karnataka",
     summary:
       "Software Developer | AI Enthusiast | Photographer",
     email: "sumukh.acharya@email.com",
@@ -87,11 +87,13 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi there! I'm Sumukh Acharya, a 6th semester Computer Science Engineering student at PES University.
+      Hey, I'm Sumukh Acharya, currently surviving as a Final Year CSE student at PES University.
 
-      I'm deeply interested in exploring the world of Data Analytics, Machine Learning and Deep Learning. I love playing around with Data. My projects and research aim to create meaningful solutions to real-world problems, leveraging technology to make a difference.
+      I love playing around with Data. I am passionate about Data Analytics, Machine Learning, Deep Learning. Most of my interests lies in this field. I'm prolly trying to make it spill all it's secrets. I am also interested in the fields of Databases, Big Data and Web-Dev and aim to work on becoming a good Full Stack Developer.
 
-      In my free time, I enjoy learning new technologies, exploring creative ideas, and researching new projects. I am passionate about Photography
+      When I am not convincing my ML model to behave, you'll find me diving into new tech, or starting a new project or maybe researching on something that tingles me.
+
+      Outside the Tech world, I love capturing the world through my camera lens, or battling imaginary Grandmasters on the chessboard (spoiler: I win... sometimes).
     `,
     image: "/me2.jpg",
   },
