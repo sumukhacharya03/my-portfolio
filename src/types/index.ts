@@ -39,12 +39,24 @@ export interface ProjectProps {
   linkSource?: string;
 }
 
-export interface AboutProps {
+export type AboutProps = {
   description: string;
   image: string;
-}
+  education: {
+    degree: string;
+    institution: string;
+    year: string;
+  }[];
+  achievements: string[];
+  skills: {
+    [category: string]: string[];
+  };
+};
+
+
 
 export interface HeaderProps {
   siteLogo: string;
   navLinks: { text: string; href: string }[];
 }
+
