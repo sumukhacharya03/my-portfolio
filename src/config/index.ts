@@ -63,10 +63,10 @@ export const SITE_CONTENT: SiteContent = {
       image: "/portfolio.png",
     },
     {
-      name: "Fare Forecasting in Quahog City",
-      summary: "Data Analysis of RideWave Dataset in Quahog City to help RideWave implement dynamic pricing",
+      name: "Dynamic Fare Engine",
+      summary: "Ensemble Forecasting Model for Price Optimization",
       linkPreview: "/",
-      linkSource: "https://github.com/sumukhacharya03/Fare-Forecasting-in-Quahog-City",
+      linkSource: "https://github.com/sumukhacharya03/Dynamic-Fare-Engine",
       image: "/ridewave.webp",
     },
     {
@@ -116,13 +116,13 @@ about: {
   ],
 
   skills: {
-    Languages: ["Python", "R"],
+    Languages: ["Python", "R", "C"],
 
     "Machine Learning & Deep Learning": [
       "Pandas", "NumPy", "TensorFlow", "Scikit-learn", "Matplotlib", "Seaborn",
       "PyTorch", "Keras", "Librosa", "Statsmodels", "LightGBM", "Joblib",
       "OpenCV", "Random Forest", "PCA", "RFE", "SelectK", "BSO", "XGBoost",
-      "SVM", "CatBoost", "KNN", "Ensemble", "CNN", "LSTM", "Siamese Networks", "Autoencoders"
+      "SVM", "CatBoost", "KNN", "Ensemble", "CNN", "LSTM", "Siamese Networks", "Autoencoders", "LLM's"
     ],
 
     "Databases & Big Data": ["MySQL", "Hadoop", "Kafka", "Spark"],
@@ -134,7 +134,7 @@ about: {
     ],
 
     "Tools & Others": [
-      "Git", "GitHub", "Blender", "Docker", "Kubernetes", "VSCode", "MS Office",
+      "Git", "GitHub", "FAST API's", "Blender", "Docker", "Kubernetes", "VSCode", "MS Office",
       "Vercel", "Streamlit", "Figma", "Canva"
     ],
   "College Coursework": [
