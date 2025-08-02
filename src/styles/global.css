@@ -69,3 +69,162 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
+
+/* --- FINAL TIMELINE STYLES --- */
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Timeline vertical line with gradient */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(56, 189, 248, 0), rgba(56, 189, 248, 0.6), rgba(56, 189, 248, 0));
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+/* Timeline Item */
+.timeline-item {
+  padding: 10px 50px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+/* The circles on the timeline */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 18px; 
+  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 2;
+  background: var(--color-black);
+  border: 3px solid #7c7c7c;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.timeline-item:hover::after {
+    border-color: #38bdf8;
+    background: #38bdf8;
+    box-shadow: 0 0 25px #38bdf8;
+}
+
+.timeline-item-left {
+  left: 0;
+}
+.timeline-item-left::after {
+  right: -9px; 
+}
+
+.timeline-item-right {
+  left: 50%;
+}
+.timeline-item-right::after {
+  left: -9px;
+}
+
+/* Year on the timeline - CORRECTED */
+.timeline-year {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-neutral);
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+    width: 100px; /* Give it a fixed width */
+}
+
+/* For LEFT items, place year on the RIGHT of the dot */
+.timeline-item-left .timeline-year {
+    left: 100%;
+    margin-left: 30px;
+    text-align: left;
+}
+
+/* For RIGHT items, place year on the LEFT of the dot */
+.timeline-item-right .timeline-year {
+    right: 100%;
+    margin-right: 30px;
+    text-align: right;
+}
+
+.timeline-item:hover .timeline-year {
+    color: #38bdf8;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+/* Content box */
+.timeline-content {
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  border-radius: 8px;
+  color: var(--color-white);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-item:hover .timeline-content {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 30px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .timeline-item-left::after, .timeline-item-right::after {
+    left: 21px;
+  }
+  .timeline-item-right {
+    left: 0%;
+  }
+
+  /* For mobile, place year ABOVE the box for clarity */
+  .timeline-item-left .timeline-year,
+  .timeline-item-right .timeline-year {
+      left: 70px;
+      right: auto;
+      top: -20px;
+      transform: none;
+      text-align: left;
+      margin-left: 0;
+  }
+
+  .timeline-content {
+      margin-top: 15px;
+  }
+  
+  .timeline-item:hover .timeline-year {
+      transform: none;
+  }
+}

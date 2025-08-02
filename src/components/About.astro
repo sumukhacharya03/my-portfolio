@@ -2,7 +2,6 @@
 import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import type { AboutProps, HeroProps } from "@types";
-
 type Props = AboutProps & Pick<HeroProps, "name">;
 
 const { description, image, name, education, skills, achievements } = Astro.props;
@@ -10,7 +9,6 @@ const { description, image, name, education, skills, achievements } = Astro.prop
 
 <Section text="About Me" href="about">
   <div class="flex flex-col gap-8">
-    <!-- Description and Image -->
     <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
       <p class="w-auto text-base text-white md:pr-5 whitespace-pre-line">{description}</p>
       <div class="h-80 w-64 flex-shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]">
@@ -24,7 +22,6 @@ const { description, image, name, education, skills, achievements } = Astro.prop
       </div>
     </div>
 
-    <!-- Skills Section -->
     <div class="mt-6">
       <h3 class="text-xl font-bold text-white mb-4">Skills</h3>
       <div class="space-y-6">
@@ -45,8 +42,8 @@ const { description, image, name, education, skills, achievements } = Astro.prop
       </div>
     </div>
 
-    <!-- Achievements Section -->
-    <div class="mt-6">
+  
+   <div class="mt-6">
       <h3 class="text-xl font-bold text-white mb-4">Achievements</h3>
       <ul class="list-disc list-inside space-y-2 text-white/90">
         {achievements.map(item => (
@@ -55,18 +52,19 @@ const { description, image, name, education, skills, achievements } = Astro.prop
       </ul>
     </div>
 
-    <!-- Education Section -->
-    <div class="mt-6">
-      <h3 class="text-xl font-bold text-white mb-4">Education</h3>
-      <ul class="space-y-3">
-        {education.map(edu => (
-          <li class="border border-gray-300 bg-white/10 text-white/90 p-3 rounded-lg shadow-sm">
-            <p class="font-semibold">{edu.degree}</p>
-            <p class="text-sm">{edu.institution}</p>
-            <p class="text-sm">{edu.year}</p>
-          </li>
+    <div class="mt-10">
+      <h3 class="text-2xl font-bold text-white mb-8 text-center font-serif">My Journey</h3>
+      <div class="timeline">
+        {education.map((edu, index) => (
+          <div class={`timeline-item ${index % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'}`}>
+            <div class="timeline-year">{edu.year}</div>
+            <div class="timeline-content">
+              <h4 class="font-semibold text-lg text-primary">{edu.degree}</h4>
+              <p class="text-neutral text-sm">{edu.institution}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   </div>
 </Section>
