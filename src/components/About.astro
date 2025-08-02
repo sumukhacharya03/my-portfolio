@@ -23,18 +23,14 @@ const { description, image, name, education, skills, achievements } = Astro.prop
     </div>
 
     <div class="mt-6">
-      <h3 class="text-xl font-bold text-white mb-4">Skills</h3>
-      <div class="space-y-6">
+      <h3 class="text-3xl font-bold text-white mb-6 font-serif">Skills</h3>
+      <div class="cyber-skills-grid">
         {Object.entries(skills).map(([category, items]) => (
-          <div>
-            <h4 class="text-lg font-semibold text-white/90 mb-2">{category}</h4>
-            <div class="flex flex-wrap gap-2">
+          <div class="cyber-skill-card">
+            <h4 class="cyber-skill-category">{category}</h4>
+            <div class="cyber-skill-list">
               {items.map(skill => (
-                <span class="bg-white text-black text-sm px-3 py-1 rounded-full shadow-sm 
-                             transition-transform duration-300 transform 
-                             hover:scale-105 hover:-translate-y-1 cursor-pointer">
-                  {skill}
-                </span>
+                <span class="cyber-skill-item">{skill}</span>
               ))}
             </div>
           </div>
@@ -42,14 +38,15 @@ const { description, image, name, education, skills, achievements } = Astro.prop
       </div>
     </div>
 
-  
-   <div class="mt-6">
-      <h3 class="text-xl font-bold text-white mb-4">Achievements</h3>
-      <ul class="list-disc list-inside space-y-2 text-white/90">
+   <div class="mt-10">
+      <h3 class="text-3xl font-bold text-white mb-6 font-serif">Achievements</h3>
+      <div class="achievements-grid">
         {achievements.map(item => (
-          <li>{item}</li>
+          <div class="cyber-achievement-card">
+            <p class="cyber-achievement-text">{item}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
 
     <div class="mt-10">

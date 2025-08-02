@@ -2,6 +2,7 @@
 import Header from "@components/Header.astro";
 import "@fontsource/be-vietnam-pro";
 import "@fontsource-variable/gabarito";
+import "@fontsource/plus-jakarta-sans";
 import { SITE_CONFIG } from "@config";
 import Footer from "@components/Footer.astro";
 
@@ -28,6 +29,7 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta name="author" content={author} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 

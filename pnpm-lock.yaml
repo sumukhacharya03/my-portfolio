@@ -17,6 +17,12 @@ importers:
       '@fontsource/be-vietnam-pro':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource/plus-jakarta-sans':
+        specifier: ^5.2.6
+        version: 5.2.6
+      '@fontsource/poppins':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@tailwindcss/vite':
         specifier: ^4.1.1
         version: 4.1.1(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.5.1))
@@ -282,6 +288,12 @@ packages:
 
   '@fontsource/be-vietnam-pro@5.1.0':
     resolution: {integrity: sha512-7/bvo9Rxexnqh52W5JuLZWOV7JR6l71QJW360HQ89rTPZIY/qLMB212pfoYXGPYBTsttTBS+e22/wEurghp6oA==}
+
+  '@fontsource/plus-jakarta-sans@5.2.6':
+    resolution: {integrity: sha512-mvUiz1ta3bCVhP/DPmAOmuzhHQi6ddOo1GgaW58rpojr510Rx9BkqXqcnMhGEOMZZB3+84frvfFmw/jKCctHLw==}
+
+  '@fontsource/poppins@5.2.6':
+    resolution: {integrity: sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2296,6 +2308,10 @@ snapshots:
   '@fontsource-variable/gabarito@5.1.0': {}
 
   '@fontsource/be-vietnam-pro@5.1.0': {}
+
+  '@fontsource/plus-jakarta-sans@5.2.6': {}
+
+  '@fontsource/poppins@5.2.6': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
