@@ -35,6 +35,7 @@ export interface ProjectProps {
   name: string;
   summary: string;
   image: string;
+  tools: string[]; // Added this line
   linkPreview?: string;
   linkSource?: string;
 }
@@ -52,6 +53,8 @@ export type AboutProps = {
     [category: string]: string[];
   };
 };
+
+
 
 export interface HeaderProps {
   siteLogo: string;

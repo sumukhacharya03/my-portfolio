@@ -37,7 +37,7 @@ export const SITE_CONTENT: SiteContent = {
       company: "CODMAV",
       position: "Research Intern",
       startDate: "June 2024",
-      endDate: "July 2024",
+      endDate: "August 2024",
       repoLink: "https://github.com/sumukhacharya03/Lung-Cancer-ML",
       summary: [
         "Led the development of a Lung Cancer Risk Prediction System.",
@@ -50,39 +50,69 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
+      name: "Senior-Vision-AI",
+      summary: "An Elderly-AI-Assistant that simplifies supermarket shopping by speaking product summaries",
+      linkSource: "https://github.com/sumukhacharya03/Senior-Vision-AI",
+      image: "/senior.jpg",
+      tools: ["Python", "Flask", "Gunicorn", "JavaScript", "HTML/CSS", "Google Vision API", "Gemini API", "Render", "Vercel"]
+    },
+    {
       name: "DFOS",
       summary: "Distributed File Orchestration and Synchronization: Multi-Node Data-Transfer-Framework for Linux",
       linkSource: "https://github.com/sumukhacharya03/DFOS",
       image: "/dfos.png",
+      tools: ["socket", "TCP Protocol", "ThreadPoolExecutor", "Multi-Threading", "Client-Server Architecture"]
     },
     {
-      name: "My Portfolio",
+      name: "Dynamic-Fare-Engine",
+      summary: "Ensemble Forecasting Model to help RideWave implement Dynamic Pricing",
+      linkSource: "https://github.com/sumukhacharya03/Dynamic-Fare-Engine",
+      image: "/fare.webp",
+      tools: ["Python", "Pandas", "NumPy", "Scikit-learn", "Statsmodels", "XGBoost", "Matplotlib", "Seaborn"]
+    },
+    {
+      name: "my-portfolio",
       summary: "Portfolio Website using Astro and TailwindCSS",
-      linkPreview: "/",
       linkSource: "https://github.com/sumukhacharya03/my-portfolio",
       image: "/portfolio.png",
+      tools: ["Astro", "TailwindCSS", "TypeScript", "Vanilla JavaScript", "Responsive Design"]
     },
     {
-      name: "Dynamic Fare Engine",
-      summary: "Ensemble Forecasting Model for Price Optimization",
-      linkPreview: "/",
-      linkSource: "https://github.com/sumukhacharya03/Dynamic-Fare-Engine",
-      image: "/ridewave.webp",
+      name: "Streamly",
+      summary: "Content Strategy and User Retention Analysis for Streamly",
+      linkSource: "https://github.com/sumukhacharya03/streamly",
+      image: "/streamly.png",
+      tools: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"]
     },
     {
-      name: "URL Shortener",
+      name: "Vogue-Vision",
+      summary: "A PyTorch-powered multi-output CNN that classifies fashion images by type, color, season, and gender. Deployed with FastAPI and Streamlit.",
+      linkSource: "https://github.com/sumukhacharya03/Vogue-Vision",
+      image: "/vogue.png",
+      tools: ["Python", "PyTorch", "Torchvision", "FastAPI", "Uvicorn", "Streamlit", "Scikit-learn", "Pandas", "NumPy", "Pillow"]
+    },
+    {
+      name: "URL-Shortener",
       summary: "Load Balanced URL Shortener using Docker, Kubernetes and Redis",
-      linkPreview: "/",
       linkSource: "https://github.com/sumukhacharya03/URL-Shortener",
       image: "/url.png",
+      tools: ["Docker", "Kubernetes", "Redis", "Flask", "Python", "NGINX", "Minikube", "Kubectl"]
     },
     {
-      name: "Sports Rental",
+      name: "Restaurant-Ordering-System",
+      summary: "Restuarant Ordering System using Socket Programming and SSL",
+      linkSource: "https://github.com/sumukhacharya03/Restaurant-Ordering-System",
+      image: "/restaurant.png",
+      tools: ["Python", "Socket Programming", "SSL", "pickle", "tabulate"]
+    },
+    {
+      name: "Sports-Rental",
       summary: "Sports Equipment Rental Management System using MySQL and Streamlit",
-      linkPreview: "/",
       linkSource: "https://github.com/sumukhacharya03/Sports-Rental",
       image: "/sports.webp",
+      tools: ["MySQL", "Python", "Streamlit"]
     },
+    
 
   ],
 about: {
@@ -163,5 +193,3 @@ about: {
 
 
 };
-
-// #5755ff
