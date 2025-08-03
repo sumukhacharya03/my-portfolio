@@ -1,67 +1,63 @@
 ---
 import type { HeroProps } from "@types";
+import { SITE_CONFIG } from "@config";
+
 type Props = HeroProps;
 
-const { specialty, summary, email } = Astro.props;
+const { name, email } = Astro.props;
+const whoami_output = `Hey! I am Sumukh Acharya, a final year CSE Student in Bengaluru, AI Enthusiast, and a Photographer.`;
+
+// Data for the client-side script
+const socialData = {
+    github: SITE_CONFIG.socialLinks.find(l => l.text === 'GitHub')?.href,
+    linkedin: SITE_CONFIG.socialLinks.find(l => l.text === 'LinkedIn')?.href,
+    vsco: SITE_CONFIG.socialLinks.find(l => l.text === 'VSCO')?.href,
+    gmail: 'sumukh.acharya@gmail.com'
+};
 ---
 
-<section class="relative py-24 md:py-32 px-6 sm:px-12 lg:px-24 z-10">
-  <!-- Name Typing Effect -->
-  <h1 class="mb-2 font-serif text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white">
-    <span id="typed-name"></span><span class="blinking-cursor">|</span>
+<section class="relative py-16 md:py-20 px-4 sm:px-8 z-10 text-center">
+  <h1 class="mb-6 font-serif text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white">
+    {name}
   </h1>
 
-  <!-- Specialty -->
-  <p class="mb-8 font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
-    {specialty}
-  </p>
-
-  <!-- Summary -->
-  <p class="mb-12 max-w-2xl text-lg text-neutral-300 leading-relaxed">
-    {summary}
-  </p>
-
-  <!-- Social Logos -->
-  <div class="flex gap-6 mb-8">
-  <a 
-    href="mailto:sumukh.acharya@gmail.com"
-    class="transition-transform duration-200 hover:scale-120"
-  >
-    <img src="/icons/gmail.jpg" alt="Gmail" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
-  </a>
-
-
-    <a
-      href="https://github.com/sumukhacharya03"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="transition-transform duration-200 hover:scale-120"
-    >
-      <img src="/icons/github.webp" alt="GitHub" class="w-8 h-8 sm:w-9 sm:h-9" />
-    </a>
-
-    <a
-      href="https://www.linkedin.com/in/sumukh-acharya-6859ab312/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="transition-transform duration-200 hover:scale-120"
-    >
-      <img src="/icons/linkedin.png" alt="LinkedIn" class="w-8 h-8 sm:w-9 sm:h-9" />
-    </a>
-
-    <a
-      href="https://vsco.co/sumukhacharya/gallery"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="transition-transform duration-200 hover:scale-120"
-    >
-      <img src="/icons/vsco.jpeg" alt="VSCO" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
-    </a>
-  </div>
-
-  <!-- Buttons -->
-  <div class="flex flex-wrap gap-4">
-
+  <div class="mb-8">
+    <div class="flex gap-6 mb-8 justify-center">
+        <a 
+          href={`mailto:${email}`}
+          class="transition-transform duration-200 hover:scale-120"
+          aria-label="Email"
+        >
+          <img src="/icons/gmail.jpg" alt="Gmail" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
+        </a>
+        <a
+          href="https://github.com/sumukhacharya03"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-transform duration-200 hover:scale-120"
+          aria-label="GitHub"
+        >
+          <img src="/icons/github.webp" alt="GitHub" class="w-8 h-8 sm:w-9 sm:h-9" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/sumukh-acharya-6859ab312/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-transform duration-200 hover:scale-120"
+          aria-label="LinkedIn"
+        >
+          <img src="/icons/linkedin.png" alt="LinkedIn" class="w-8 h-8 sm:w-9 sm:h-9" />
+        </a>
+        <a
+          href="https://vsco.co/sumukhacharya/gallery"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-transform duration-200 hover:scale-120"
+          aria-label="VSCO"
+        >
+          <img src="/icons/vsco.jpeg" alt="VSCO" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full" />
+        </a>
+    </div>
     <a
       href="/resume.pdf"
       target="_blank"
@@ -71,37 +67,233 @@ const { specialty, summary, email } = Astro.props;
       View Resume
     </a>
   </div>
+  
+  <p class="mb-2 text-sm text-neutral-400 font-sans">
+    Try the terminal! Available commands: 
+    <code class="text-cyan-400">whoami</code>, <code class="text-cyan-400">ls</code>, <code class="text-cyan-400">cd</code>, <code class="text-cyan-400">github</code>, <code class="text-cyan-400">gmail</code>, <code class="text-cyan-400">help</code> & more.
+  </p>
+  <p class="mb-4 text-sm text-neutral-400 font-sans">
+    Type <code class="text-cyan-400">help</code> to know all the available commands.
+  </p>
+
+  <div id="terminal" class="w-full max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden text-left">
+    <div class="terminal-header bg-[#2d2d2d] flex items-center p-2 border-b border-black/30">
+      <div class="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+      <div class="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+      <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+    </div>
+    <div id="terminal-body" class="bg-black/80 backdrop-blur-sm p-4 font-mono text-white/90 text-sm md:text-base min-h-[150px]" tabindex="0">
+      <div id="history"></div>
+      <div id="current-line" class="hidden">
+        <span id="prompt-text"><span class="text-green-400">sumukh@portfolio</span><span class="text-white">:</span><span class="text-blue-400">~</span>$</span>
+        <span id="input-text" class="pl-2"></span>
+        <span class="blinking-cursor"></span>
+        <input type="text" id="hidden-input" class="hidden-input-field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Typing Animation Script -->
-<script>
-  const text = "Sumukh\u00A0Acharya"
-  const typedName = document.getElementById("typed-name");
-  let index = 0;
+<script define:vars={{ whoami_output, socialData }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const terminalBody = document.getElementById('terminal-body');
+    const history = document.getElementById('history');
+    const hiddenInput = document.getElementById('hidden-input');
+    const inputTextEl = document.getElementById('input-text');
+    const currentLineEl = document.getElementById('current-line');
+    if (!terminalBody || !history || !hiddenInput || !inputTextEl || !currentLineEl) return;
 
-  function type() {
-    if (index < text.length) {
-      if (typedName) {
-        typedName.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 120); // typing speed
+    const sections = {
+      'work-experience': '#experience',
+      'my-projects': '#projects',
+      'about': '#about'
+    };
+
+    const commands = ['whoami', 'help', 'ls', 'cd', 'xdg-open', 'clear', 'github', 'linkedin', 'vsco', 'gmail'];
+    const autocompleteArgs = ['work-experience', 'my-projects', 'about', 'resume.pdf'];
+
+    const type = (element, text, speed, callback) => {
+      let i = 0;
+      const typeChar = () => {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeChar, speed);
+        } else if (callback) {
+          callback();
+        }
+      };
+      typeChar();
+    };
+
+    const initialAnimation = () => {
+      const line1 = document.createElement('div');
+      const prompt1 = document.createElement('span');
+      prompt1.innerHTML = `<span class="text-green-400">sumukh@portfolio</span><span class="text-white">:</span><span class="text-blue-400">~</span>$ `;
+      const command1 = document.createElement('span');
+      line1.append(prompt1, command1);
+      history.appendChild(line1);
+
+      type(command1, 'whoami', 100, () => {
+        const outputEl = document.createElement('pre');
+        outputEl.className = 'text-white/80 mt-1 mb-2 whitespace-pre-wrap';
+        history.appendChild(outputEl);
+        type(outputEl, whoami_output, 20, () => {
+          currentLineEl.classList.remove('hidden');
+          hiddenInput.focus();
+        });
+      });
+    };
+
+    const executeCommand = (commandStr) => {
+      const [command, ...args] = commandStr.split(' ').filter(Boolean);
+      let output = '';
+
+      switch (command) {
+        case 'whoami':
+          output = whoami_output;
+          break;
+        case 'help':
+          output = `Available commands:
+  <span class="text-cyan-400">whoami</span>              - About me
+  <span class="text-cyan-400">ls</span>                  - List portfolio sections
+  <span class="text-cyan-400">cd [section]</span>        - Navigate to a section
+  <span class="text-cyan-400">xdg-open resume.pdf</span> - Open my resume
+  <span class="text-cyan-400">github</span>              - Open my GitHub profile
+  <span class="text-cyan-400">linkedin</span>            - Open my LinkedIn profile
+  <span class="text-cyan-400">vsco</span>                - Open my VSCO profile
+  <span class="text-cyan-400">gmail</span>               - Show my email address
+  <span class="text-cyan-400">clear</span>               - Clear the terminal`;
+          break;
+        case 'ls':
+          output = `<span class="text-blue-400">work-experience/</span>   <span class="text-blue-400">my-projects/</span>   <span class="text-blue-400">about/</span>   resume.pdf`;
+          break;
+        case 'xdg-open':
+            if (args[0] === 'resume.pdf') {
+                output = 'Opening resume...';
+                window.open('/resume.pdf', '_blank');
+            } else {
+                output = `xdg-open: file not found: ${args[0] || '""'}`;
+            }
+            break;
+        case 'cd':
+          const targetId = sections[args[0]];
+          if (targetId) {
+            const sectionElement = document.querySelector(targetId);
+            if (sectionElement) {
+              sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              output = `Navigating to ${args[0]}...`;
+            }
+          } else {
+            output = `cd: directory not found: ${args[0] || '""'}. Try 'ls' to see available sections.`;
+          }
+          break;
+        case 'github':
+            output = 'Redirecting to GitHub...';
+            if (socialData.github) window.open(socialData.github, '_blank');
+            break;
+        case 'linkedin':
+            output = 'Redirecting to LinkedIn...';
+            if (socialData.linkedin) window.open(socialData.linkedin, '_blank');
+            break;
+        case 'vsco':
+            output = 'Redirecting to VSCO...';
+            if (socialData.vsco) window.open(socialData.vsco, '_blank');
+            break;
+        case 'gmail':
+            output = socialData.gmail;
+            break;
+        case 'clear':
+          history.innerHTML = '';
+          return;
+        case undefined:
+            break;
+        default:
+          output = `command not found: ${command}. Type 'help' for a list of commands.`;
       }
-    }
-  }
+      if (output) {
+        const outputEl = document.createElement('pre');
+        outputEl.className = 'text-white/80 mt-1 mb-2 whitespace-pre-wrap';
+        outputEl.innerHTML = output;
+        history.appendChild(outputEl);
+      }
+    };
+    
+    const handleAutocomplete = () => {
+        const value = hiddenInput.value;
+        const parts = value.split(' ');
+        
+        if (parts.length === 1) {
+            const partial = parts[0];
+            if (!partial) return;
+            const matches = commands.filter(c => c.startsWith(partial));
+            if (matches.length === 1) {
+                hiddenInput.value = matches[0];
+                inputTextEl.textContent = matches[0];
+            }
+        } else if (parts.length === 2 && (parts[0] === 'cd' || parts[0] === 'xdg-open')) {
+            const partial = parts[1];
+            if (!partial) return;
+            const matches = autocompleteArgs.filter(f => f.startsWith(partial));
+            if (matches.length === 1) {
+                const completedValue = `${parts[0]} ${matches[0]}`;
+                hiddenInput.value = completedValue;
+                inputTextEl.textContent = completedValue;
+            }
+        }
+    };
 
-  document.addEventListener("DOMContentLoaded", type);
+    terminalBody.addEventListener('click', () => hiddenInput.focus());
+    hiddenInput.addEventListener('input', (e) => inputTextEl.textContent = e.target.value);
+    hiddenInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+          e.preventDefault();
+          handleAutocomplete();
+      } else if (e.key === 'Enter') {
+        const commandStr = e.target.value.trim();
+        const line = document.createElement('div');
+        line.innerHTML = currentLineEl.innerHTML;
+        line.querySelector('#input-text').textContent = commandStr;
+        line.querySelector('.blinking-cursor').remove();
+        history.appendChild(line);
+        
+        executeCommand(commandStr);
+        
+        e.target.value = '';
+        inputTextEl.textContent = '';
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+    });
+
+    initialAnimation();
+  });
 </script>
 
 <style>
-  .blinking-cursor {
-    font-weight: bold;
-    font-size: 1em;
-    color: white;
-    animation: blink 1s step-end infinite;
+  .font-mono {
+    font-family: 'Ubuntu Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
   }
-
+  .blinking-cursor {
+    animation: blink 1s step-end infinite;
+    border-left: 2px solid white;
+    display: inline-block;
+    height: 1.2em;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
   @keyframes blink {
-    from, to { opacity: 0 }
-    50% { opacity: 1 }
+    from, to { border-left-color: transparent; }
+    50% { border-left-color: white; }
+  }
+  .hidden-input-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  code {
+    font-family: 'Ubuntu Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 0.9em;
   }
 </style>
