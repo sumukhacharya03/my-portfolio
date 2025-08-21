@@ -35,7 +35,7 @@ export const SITE_CONTENT: SiteContent = {
   experience: [
     {
       company: "CODMAV",
-      position: "Research Intern",
+      position: "Data Science Intern",
       startDate: "June 2024",
       endDate: "August 2024",
       repoLink: "https://github.com/sumukhacharya03/Lung-Cancer-ML",
@@ -71,25 +71,11 @@ export const SITE_CONTENT: SiteContent = {
       tools: ["Python", "Pandas", "NumPy", "Scikit-learn", "Statsmodels", "XGBoost", "Matplotlib", "Seaborn"]
     },
     {
-      name: "my-portfolio",
-      summary: "Portfolio Website using Astro and TailwindCSS",
-      linkSource: "https://github.com/sumukhacharya03/my-portfolio",
-      image: "/portfolio.png",
-      tools: ["Astro", "TailwindCSS", "TypeScript", "Vanilla JavaScript", "Responsive Design"]
-    },
-    {
-      name: "Streamly",
-      summary: "Content Strategy and User Retention Analysis for Streamly",
-      linkSource: "https://github.com/sumukhacharya03/streamly",
-      image: "/streamly.png",
-      tools: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"]
-    },
-    {
-      name: "Vogue-Vision",
-      summary: "A PyTorch-powered multi-output CNN that classifies fashion images by type, color, season, and gender. Deployed with FastAPI and Streamlit.",
-      linkSource: "https://github.com/sumukhacharya03/Vogue-Vision",
-      image: "/vogue.png",
-      tools: ["Python", "PyTorch", "Torchvision", "FastAPI", "Uvicorn", "Streamlit", "Scikit-learn", "Pandas", "NumPy", "Pillow"]
+      name: "Synapse",
+      summary: "From Transcript to Insight, powered by your Instructions",
+      linkSource: "https://github.com/sumukhacharya03/Synapse",
+      image: "/synapse.png",
+      tools: ["JavaScript", "HTML", "npm", "Node.js", "GeminiAPI"]
     },
     {
       name: "URL-Shortener",
@@ -97,20 +83,6 @@ export const SITE_CONTENT: SiteContent = {
       linkSource: "https://github.com/sumukhacharya03/URL-Shortener",
       image: "/url.png",
       tools: ["Docker", "Kubernetes", "Redis", "Flask", "Python", "NGINX", "Minikube", "Kubectl"]
-    },
-    {
-      name: "Restaurant-Ordering-System",
-      summary: "Restuarant Ordering System using Socket Programming and SSL",
-      linkSource: "https://github.com/sumukhacharya03/Restaurant-Ordering-System",
-      image: "/restaurant.png",
-      tools: ["Python", "Socket Programming", "SSL", "pickle", "tabulate"]
-    },
-    {
-      name: "Sports-Rental",
-      summary: "Sports Equipment Rental Management System using MySQL and Streamlit",
-      linkSource: "https://github.com/sumukhacharya03/Sports-Rental",
-      image: "/sports.webp",
-      tools: ["MySQL", "Python", "Streamlit"]
     },
     
 
@@ -146,27 +118,20 @@ about: {
   ],
 
   skills: {
-    Languages: ["Python", "R", "C"],
+    Languages: ["Python", "R", "C", "MySQL", "JavaScript/TypeScript"],
 
-    "Machine Learning & Deep Learning": [
-      "Pandas", "NumPy", "TensorFlow", "Scikit-learn", "Matplotlib", "Seaborn",
-      "PyTorch", "Keras", "Librosa", "Statsmodels", "LightGBM", "Joblib",
-      "OpenCV", "Random Forest", "PCA", "RFE", "SelectK", "BSO", "XGBoost",
-      "SVM", "CatBoost", "KNN", "Ensemble", "CNN", "LSTM", "Siamese Networks", "Autoencoders", "LLM's"
+    "Data Science": [
+      "PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "LLMs"
     ],
 
-    "Databases & Big Data": ["MySQL", "Hadoop", "Kafka", "Spark"],
+    "Databases & Big DataMLOps and Deployment": ["Docker", "Kubernetes", "FastAPI", "Streamlit", "Git"],
 
-    "Operating Systems": ["Windows", "Linux"],
+    "Big Data": ["Kafka", "Spark", "Hadoop"],
 
     "Web Development": [
-      "HTML", "CSS", "TypeScript", "JavaScript", "React", "Astro", "TailwindCSS"
+      "Node.js", "React", "HTML/CSS", "Tailwind CSS", "Flask"
     ],
 
-    "Tools & Others": [
-      "Git", "GitHub", "FAST API's", "Blender", "Docker", "Kubernetes", "VSCode", "MS Office",
-      "Vercel", "Streamlit", "Figma", "Canva"
-    ],
   "College Coursework": [
   "Machine Learning",
   "Databases",
