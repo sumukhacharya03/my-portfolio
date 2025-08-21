@@ -57,6 +57,8 @@ const { description, image, name, education, skills, achievements } = Astro.prop
             <div class="timeline-year">{edu.year}</div>
             <div class="timeline-content">
               <h4 class="font-semibold text-lg text-primary">{edu.degree}</h4>
+              {edu.cgpa && <p class="text-neutral text-sm">CGPA: {edu.cgpa}</p>}
+              {edu.percentage && <p class="text-neutral text-sm">Percentage: {edu.percentage}</p>}
               <p class="text-neutral text-sm">{edu.institution}</p>
             </div>
           </div>

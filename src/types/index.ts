@@ -47,6 +47,8 @@ export type AboutProps = {
     degree: string;
     institution: string;
     year: string;
+    cgpa?: string;
+    percentage?: string;
   }[];
   achievements: string[];
   skills: {

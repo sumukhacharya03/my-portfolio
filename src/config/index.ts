@@ -104,16 +104,19 @@ about: {
       degree: "B.Tech in Computer Science and Engineering",
       institution: "PES University, Bengaluru",
       year: "2022 – 2026",
+      cgpa: "7.4"
     },
     {
       degree: "PUC (Class 11-12)",
       institution: "BASE PU College, Bengaluru",
       year: "2020 – 2022",
+      percentage: '95'
     },
     {
       degree: "CBSE (Class 1-10)",
       institution: "Sri Kumaran Children's Home, Bengaluru",
       year: "2009 – 2020",
+      percentage: '90'
     },
   ],
 
