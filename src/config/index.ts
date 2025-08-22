@@ -142,7 +142,7 @@ about: {
   "Software Engineering",
   "Cloud Computing",
   "Big Data",
-  "Data Analytics",
+  "Data Analyts",
   "Statistics for Data Science",
   "C/Java",
   "Data Structures and Algorithms",
