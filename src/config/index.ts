@@ -27,9 +27,9 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Sumukh Acharya",
-    specialty: "Final Year CSE Student  Bengaluru, Karnataka",
+    specialty: "Final Year CSE Student",
     summary:
-      "Software Developer | AI Enthusiast | Photographer",
+      "Karnataka",
     email: "sumukh.acharya@email.com",
   },
   experience: [
@@ -89,13 +89,7 @@ export const SITE_CONTENT: SiteContent = {
   ],
 about: {
   description: `
-    Hey, I'm Sumukh Acharya, currently surviving as a Final Year CSE student at PES University.
-
-    I love playing around with Data. I am passionate about Data Analytics, Machine Learning, Deep Learning. Most of my interests lies in this field. I'm prolly trying to make it spill all it's secrets. I am also interested in the fields of Databases, Big Data and Web-Dev and aim to work on becoming a good Full Stack Developer.
-
-    When I am not convincing my ML model to behave, you'll find me diving into new tech, or starting a new project or maybe researching on something that tingles me.
-
-    Outside the Tech world, I love capturing the world through my camera lens, or battling imaginary Grandmasters on the chessboard (spoiler: I win... sometimes).
+  I'm a final-year Computer Science student at PES University, fascinated by the stories data can tell. My main interest lies in Data Analytics and Machine Learning, and I'm always looking for opportunities to apply what I'm learning to solve interesting problems. I also have a growing curiosity for web development, big data and database systems, aiming to build a broad skill set. Outside of the tech world, I enjoy capturing moments through photography and the strategic challenge of chess.
   `,
   image: "/me2.jpg",
 
@@ -121,19 +115,16 @@ about: {
   ],
 
   skills: {
-    Languages: ["Python", "R", "C", "MySQL", "JavaScript/TypeScript"],
+    Languages: ["Python", "MySQL"],
 
     "Data Science": [
-      "PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "LLMs"
+      "PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy"
     ],
 
-    "Databases & Big DataMLOps and Deployment": ["Docker", "Kubernetes", "FastAPI", "Streamlit", "Git"],
+    "MLOps and Deployment": ["Docker", "Kubernetes", "FastAPI", "Streamlit", "Git"],
 
-    "Big Data": ["Kafka", "Spark", "Hadoop"],
+    "Big Data": ["Kafka", "Spark"],
 
-    "Web Development": [
-      "Node.js", "React", "HTML/CSS", "Tailwind CSS", "Flask"
-    ],
 
   "College Coursework": [
   "Machine Learning",
@@ -152,9 +143,7 @@ about: {
   },
   achievements: [
   "IBM Data Science Professional Course by Coursera.",
-  "Learn Photorealism with Blender Course by PESU I/O.",
   "Secured 7th place out of 364 teams in a Kaggle Data Analytics Hackathon.",
-  "Participated in HackNight organised by ACM and contributed to Open-Source.",
 ],
 
 }
