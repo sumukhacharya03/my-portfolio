@@ -34,6 +34,27 @@ export const SITE_CONTENT: SiteContent = {
   },
   experience: [
     {
+      company: "Tvam Technologies Pvt. Ltd.",
+      position: "AI Intern",
+      startDate: "September 2025",
+      endDate: "Present",
+
+      summary: [
+        "Engaged in a structured training program focused on the company’s Python development standards and applied AI methodologies.",
+        "Preparing to contribute to a full-stack AI project, focusing on design and scalability.",
+      ],
+    },
+{
+      company: "PES University",
+      position: "Teaching Assistant (Python & Databases)",
+      startDate: "August 2025",
+      endDate: "Present",
+      summary: [
+        "Mentoring undergraduate students in Python Programming and Database Management Systems fundamentals.",
+        "Assisting faculty in grading assignments, preparing course materials, and conducting lab sessions.",
+      ],
+    },
+{
       company: "CODMAV",
       position: "Data Science Intern",
       startDate: "June 2024",
@@ -45,7 +66,7 @@ export const SITE_CONTENT: SiteContent = {
         "Implemented machine learning models including XGBoost, CatBoost, SVM, KNN, and an Ensemble Model combining all models on the transformed datasets, achieving a peak accuracy of 98.75% and recall of 96.25% with RFE-selected features.",
         "Conducted in-depth research on Lung Cancer, machine learning techniques, visualized model results using graphs and tables, and co-authored a research paper titled Predictive Analytics for Early Lung Cancer Risk using Machine Learning, published in IEEE Xplore.",
       ],
-    },
+    }
     
   ],
   projects: [
@@ -115,15 +136,13 @@ about: {
   ],
 
   skills: {
-    Languages: ["Python", "MySQL"],
+    Languages: ["Python", "C", "Java"],
 
     "Data Science": [
       "PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy"
     ],
 
-    "MLOps and Deployment": ["Docker", "Kubernetes", "FastAPI", "Streamlit", "Git"],
-
-    "Big Data": ["Kafka", "Spark"],
+    "Frameworks and Tools": ["MySQL", "Kafka", "Spark", "Docker", "Kubernetes", "FastAPI", "Streamlit", "Git"],
 
 
   "College Coursework": [
@@ -133,7 +152,7 @@ about: {
   "Software Engineering",
   "Cloud Computing",
   "Big Data",
-  "Data Analyts",
+  "Data Analytics",
   "Statistics for Data Science",
   "C/Java",
   "Data Structures and Algorithms",
