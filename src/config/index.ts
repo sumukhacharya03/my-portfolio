@@ -40,8 +40,8 @@ export const SITE_CONTENT: SiteContent = {
       endDate: "Present",
 
       summary: [
-        "Engaged in a structured training program focused on the company’s Python development standards and applied AI methodologies.",
-        "Preparing to contribute to a full-stack AI project, focusing on design and scalability.",
+        "Mastering the company’s Python development standards and applied AI methodologies for a full-stack AI project.",
+        "Actively contributing to the design and scalability planning for a full-stack AI project while mastering the company’s core technology stack.",
       ],
     },
 {
@@ -50,7 +50,7 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "August 2025",
       endDate: "Present",
       summary: [
-        "Mentoring undergraduate students in Python Programming and Database Management Systems fundamentals.",
+        "Mentoring 150+ undergraduate students in Python and Database fundamentals.",
         "Assisting faculty in grading assignments, preparing course materials, and conducting lab sessions.",
       ],
     },
@@ -74,6 +74,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Senior-Vision-AI",
       summary: "An Elderly-AI-Assistant that simplifies supermarket shopping by speaking product summaries",
       linkSource: "https://github.com/sumukhacharya03/Senior-Vision-AI",
+      linkPreview: "https://senior-vision-ai.vercel.app/",
       image: "/senior.jpg",
       tools: ["Python", "Flask", "Gunicorn", "JavaScript", "HTML/CSS", "Google Vision API", "Gemini API", "Render", "Vercel"]
     },
@@ -95,6 +96,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Synapse",
       summary: "From Transcript to Insight, powered by your Instructions",
       linkSource: "https://github.com/sumukhacharya03/Synapse",
+      linkPreview: "https://synapse-sumukh.vercel.app/",
       image: "/synapse.png",
       tools: ["JavaScript", "HTML", "npm", "Node.js", "GeminiAPI"]
     },
