@@ -70,6 +70,13 @@ export const SITE_CONTENT: SiteContent = {
     
   ],
   projects: [
+      {
+      name: "Grid-Pulse",
+      summary: "Real-Time Stock Market for F1 Drivers",
+      linkSource: "https://github.com/sumukhacharya03/Grid-Pulse",
+      image: "/gridf.png",
+      tools: ["Python", "Apache Kafka", "Streamlit"]
+    },
     {
       name: "Senior-Vision-AI",
       summary: "An Elderly-AI-Assistant that simplifies supermarket shopping by speaking product summaries",
