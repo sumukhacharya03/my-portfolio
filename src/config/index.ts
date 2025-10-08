@@ -40,7 +40,7 @@ export const SITE_CONTENT: SiteContent = {
       endDate: "Present",
 
       summary: [
-        "Mastering the company’s Python development standards and applied AI methodologies for a full-stack AI project.",
+        "Implemented parameter-efficient fine-tuning on a Gemma-3 270M model, using LoRA to specialize its architecture for agentic tool-calling workflows.",
         "Actively contributing to the design and scalability planning for a full-stack AI project while mastering the company’s core technology stack.",
       ],
     },
